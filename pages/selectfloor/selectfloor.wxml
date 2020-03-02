@@ -1,0 +1,29 @@
+<!--pages/selectfloor/selectfloor.wxml-->
+<view>
+  <view class="position">
+    <view class="big-circle">
+      <view class="small-circle">
+        <text class="iconfont icon-Regional"></text>
+      </view>
+    </view>
+    <text class="lift-name">1#客梯</text>
+  </view>
+  <view class="kuang">
+    <view class="kuang-item">
+      <text>3</text>
+      <view class="icon-floor">
+        <text class="iconfont icon-Run run"></text>
+      </view>
+    </view>
+  </view>
+  <view class="btn-lists">
+    <view class="btn-lists-all">
+      <view class="floor-btn {{selectIndex===index?'btn-selected':'btn-unselected'}}" wx:key="index" wx:for="{{floors}}" data-index="{{index}}" bindtap="selectFloor">
+        <text class="{{selectIndex===index?'btn-text-selected':'btn-text-unselected'}}">{{floors.length-index}}</text>
+      </view>
+     
+    </view>
+
+  </view>
+
+</view>

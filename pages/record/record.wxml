@@ -1,0 +1,20 @@
+<!--pages/record/record.wxml-->
+<view >
+  <view class="base-title">
+    <view class="base-title-line"></view>
+    <text class="base-title-txt">人脸通行</text>
+  </view>
+  <view class="record-item" wx:key="index" wx:for="{{listDatas}}">
+    <view class="record-item-top">
+      <view class="record-item-top-left">
+        <view class="record-item-top-left-circle {{index%2==0?'record-item-top-left-circle-normal':'record-item-top-left-circle-refuse'}}"></view>
+        <text class="record-item-top-left-time">2020-02-01 08:00:05</text>
+      </view>
+      <text class="record-item-top-right">1#人脸门禁</text>
+    </view>
+    <view class="record-item-bottom">
+      <text class="record-item-bottom-left">体温:37℃</text>
+      <text class="record-item-bottom-right {{index%2==0?'record-item-bottom-right-normal':'record-item-bottom-right-refuse'}}">正常</text>
+    </view>
+  </view>
+</view>

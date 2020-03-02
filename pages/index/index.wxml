@@ -1,0 +1,109 @@
+<!--index.wxml-->
+<view style="background:#f5f5f5">
+  <!-- <navigationBar>
+    <text class="iconfont icon-Leftparentheses back-btn" slot="leftView"></text>
+    <text class="middle-title" slot="middleView">数字防疫</text>
+  </navigationBar> -->
+  <!-- <scroll-view style="height:{{windowHeight}}rpx;" scroll-y> -->
+    <view>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <image style="width:100%;height:100%" mode="scaleToFill" src="http://img4.imgtn.bdimg.com/it/u=1018404792,1959474490&fm=11&gp=0.jpg"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+    <view class="item-info" open-type="getUserInfo" bindgetuserinfo="getUserInfo"  bindtap="registerTap" >
+      <view class="vertical-content">
+        <view class="left-icon">
+          <text class="iconfont icon-H-Register regist-icon"></text>
+        </view>
+        <view class="left-info">
+          <text class="reg-info">人员登记</text>
+          <text class="rep-info">个人信息报备</text>
+        </view>
+      </view>
+      <text class="iconfont icon-Rightparentheses array-icon"></text>
+
+    </view>
+    <view class="item-info" bindtap="passTap">
+      <view class="vertical-content">
+        <view class="left-pass-icon">
+          <text class="iconfont icon-H-Recording regist-icon "></text>
+        </view>
+        <view class="left-info">
+          <text class="reg-info">通行记录</text>
+          <text class="rep-info">日常通行记录</text>
+        </view>
+      </view>
+      <text class="iconfont icon-Rightparentheses array-icon"></text>
+    </view>
+    <view class="item-info" bindtap="liftTap">
+      <view class="vertical-content">
+        <view class="left-lift-icon">
+          <text class="iconfont icon-H-Laddercontrol regist-icon"></text>
+        </view>
+        <view class="left-info">
+          <text class="reg-info">梯控</text>
+          <text class="rep-info">无接触智能乘梯</text>
+        </view>
+      </view>
+      <text class="iconfont icon-Rightparentheses array-icon"></text>
+    </view>
+    <view class="item-line">
+      <text class="iconfont icon-H-Action item-icon"></text>
+      <text class="item-line-title">战疫行动</text>
+    </view>
+    <view class="grid-style">
+      <view class="grid-item-info" bindtap="medicTap">
+        <view class="left-info">
+          <text class="reg-info">医务申请</text>
+          <text class="rep-info">发现疫情及时上报</text>
+        </view>
+        <view class="grid-cecle bg-apply">
+          <text class="iconfont icon-H-Application apply-icon"></text>
+        </view>
+      </view>
+      <view class="grid-item-info" bindtap="diagnoseTap">
+        <view class="left-info">
+          <text class="reg-info">医疗问诊</text>
+          <text class="rep-info">专家在线问诊服务</text>
+        </view>
+        <view class="grid-cecle bg-inquiry">
+          <text class="iconfont icon-H-Inquiry inquiry-icon"></text>
+        </view>
+      </view>
+      <view class="grid-item-info" bindtap="homeTap">
+        <view class="left-info">
+          <text class="reg-info">居家限行</text>
+          <text class="rep-info">居民储蓄频次控制</text>
+        </view>
+        <view class="grid-cecle bg-line">
+          <text class="iconfont icon-H-Limitline line-icon"></text>
+        </view>
+      </view>
+      <view class="grid-item-info" bindtap="troubleTap">
+        <view class="left-info">
+          <text class="reg-info">社区排查</text>
+          <text class="rep-info">重点对象排查登记</text>
+        </view>
+        <view class="grid-cecle bg-shoot">
+          <text class="iconfont icon-H-Troubleshoot shoot-icon"></text>
+        </view>
+      </view>
+      <view class="grid-item-info" bindtap="epassTap">
+        <view class="left-info">
+          <text class="reg-info">通行证</text>
+          <text class="rep-info">电子二维码通行证</text>
+        </view>
+        <view class="grid-cecle bg-pass">
+          <text class="iconfont icon-H-Pass pass-icon"></text>
+        </view>
+
+      </view>
+    </view>
+  <!-- </scroll-view> -->
+
+</view>

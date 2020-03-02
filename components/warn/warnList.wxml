@@ -1,0 +1,21 @@
+<!--components/warn/warnList.wxml-->
+<view>
+  <view class="base-title">
+    <view class="base-title-line"></view>
+    <text class="base-title-txt">实时告警</text>
+  </view>
+  <view class="warn-list-item">
+    <view class="warn-list-item-left">
+      <view class="warn-list-item-left-icon">
+        <text class="iconfont icon-H-Recording"></text>
+      </view>
+      <view class="warn-list-item-left-info">
+        <text>12:00:00</text>
+        <text>1#人脸门禁【肖丽平】</text>
+      </view>
+    </view>
+    <view>
+    
+    </view>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<!--pages/registed/registed.wxml-->
+<view>
+  <view class="base-item">
+    <view class="base-title">
+      <view class="base-title-line"></view>
+      <text class="base-title-txt">基本信息</text>
+    </view>
+    <text class="update">修改</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">姓名</text>
+    <text class="item-info-value">刘亦菲</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">性别</text>
+    <text class="item-info-value">女</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">联系电话</text>
+    <text class="item-info-value">13620160637</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">身份证号</text>
+    <text class="item-info-value">43656523125642</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">居民类型</text>
+    <text class="item-info-value">常住居民</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">居住区域详细地址</text>
+    <text class="item-info-value">广东省福田区天安数码城</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">单位(学校)名称</text>
+    <text class="item-info-value">深圳市中物互联发展有限公司</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">身体状况</text>
+    <text class="item-info-value">身体健康</text>
+  </view>
+  <view class="item-info">
+    <text class="item-info-title">体温</text>
+    <text class="item-info-value">37.3℃以下</text>
+  </view>
+  <view class="item-header">
+    <text class="item-info-title">人脸头像</text>
+    <image style="width:120rpx;height:80rpx;" src="http://img4.imgtn.bdimg.com/it/u=1018404792,1959474490&fm=11&gp=0.jpg"></image>
+  </view>
+</view>

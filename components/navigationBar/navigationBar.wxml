@@ -1,0 +1,14 @@
+<!--components/navigationBar/navigationBar.wxml-->
+<view class='nav bg-white' style='height:{{navH}}px'>
+    
+    <view class='nav-title'>
+    <view class="left-content">
+      <slot name="leftView"/>
+    </view>
+    <view class="middle-content">
+      <slot name="middleView" />
+    </view> 
+     <view class="right-content"></view>
+    </view>
+   
+  </view>

@@ -1,0 +1,160 @@
+page {
+  overflow: hidden;
+  height: 100%;
+}
+
+scroll-view {
+  background-color: #f5f5f5;
+}
+
+.top-info {
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  background-color: #61a3fe;
+  height: 75rpx;
+}
+
+.icon-style {
+  color: white;
+  font-size: 42rpx;
+  margin-right: 15rpx;
+}
+
+.base-ifno {
+  color: white;
+  font-size: 30rpx;
+}
+
+.base-info-address {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  background-color: white;
+  padding-left: 30rpx;
+}
+
+.address-icon {
+  background-color: #1472f3;
+  border-radius: 6rpx;
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15rpx;
+}
+
+.position {
+  font-size: 31rpx;
+  color: #999;
+}
+
+.base-info-project-name {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.base-info-project-address {
+  color: #999;
+  font-size: 22rpx;
+}
+
+.census-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rpx;
+}
+
+.census-content-info {
+  display: flex;
+  width: 93%;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  height: 120rpx;
+  border-radius: 22rpx;
+}
+
+.census-content-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.census-content-info-title {
+  color: #1472f3;
+  font-size: 34rpx;
+}
+
+.census-content-info-title-warn {
+  color: #fe0000;
+  font-size: 34rpx;
+}
+
+.census-content-info-value {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.census-content-pie {
+  display: flex;
+  width: 93%;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  height: 260rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+
+.f2-chart {
+  width: 100%;
+  height: 200px;
+}
+
+.census-content-tab {
+  width: 93%;
+  height: 75rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 2rpx solid rgba(20, 114, 243, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.census-content-tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: white;
+}
+
+.census-content-tab-item-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background: rgba(20, 114, 243, 1);
+  border-radius: 10rpx;
+}
+
+.census-content-tab-item-txt-select {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.census-content-tab-item-txt {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}

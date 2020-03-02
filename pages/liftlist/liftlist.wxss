@@ -1,0 +1,114 @@
+/* pages/liftlist/liftlist.wxss */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.liftlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 9rpx;
+}
+
+.liftlist-item-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.liftlist-item-left-lift {
+  background: #1472f3;
+  height: 48rpx;
+  width: 48rpx;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+
+.liftlist-item-left-lift-icon {
+  color: white;
+  font-size: 35rpx;
+}
+
+.liftlist-item-left-info {
+}
+
+.liftlist-item-left-info-floor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.liftlist-item-left-info-floor-name {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.liftlist-item-left-info-floor-status {
+  font-size: 29rpx;
+  color: #1472f3;
+}
+
+.icon-floor {
+  transform: rotate(90deg);
+}
+
+.icon-floor-up {
+  transform: rotate(-90deg);
+}
+
+.liftlist-item-left-info-floor-txt {
+  font-size: 22rpx;
+  color: #333;
+}
+
+.liftlist-item-right{
+  display: flex;
+  flex-direction: row;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.liftlist-item-right-call{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1472f3;
+  border-radius: 6rpx;
+  width: 90rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}
+
+.liftlist-item-right-call-txt{
+  color: white;
+  font-size: 24rpx;
+}
+
+.liftlist-item-right-select{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  border-radius: 6rpx;
+  width: 90rpx;
+  height: 60rpx;
+}
+
+.liftlist-item-right-select-disable{
+background-color: #ccc;
+}
+
+.liftlist-item-right-select-able{
+background-color: #1472f3;
+}
+
+.liftlist-item-right-select-txt{
+  color: white;
+  font-size: 24rpx;
+}

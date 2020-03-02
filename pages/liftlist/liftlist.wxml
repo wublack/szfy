@@ -1,0 +1,31 @@
+<!--pages/liftlist/liftlist.wxml-->
+<view>
+  <view class="base-title">
+    <view class="base-title-line"></view>
+    <text class="base-title-txt">电梯列表</text>
+  </view>
+  <view class="liftlist-item" wx:key="index" wx:for="{{liftLists}}">
+    <view class="liftlist-item-left">
+      <view class="liftlist-item-left-lift">
+        <text class="iconfont icon-H-Laddercontrol liftlist-item-left-lift-icon"></text>
+      </view>
+      <view class="liftlist-item-left-info">
+        <text class="liftlist-item-left-info-floor-name">1#客梯</text>
+        <view class="liftlist-item-left-info-floor">
+          <view class=" {{index%2===0?'icon-floor':'icon-floor-up'}}">
+            <text class="iconfont icon-Run liftlist-item-left-info-floor-status"></text>
+          </view>
+          <text class="liftlist-item-left-info-floor-txt">19</text>
+        </view>
+      </view>
+    </view>
+    <view class="liftlist-item-right">
+      <view class="liftlist-item-right-call" bindtap="callLift">
+        <text class="liftlist-item-right-call-txt">呼梯</text>
+      </view>
+      <view class="liftlist-item-right-select liftlist-item-right-select-disable" bindtap="selectFloor">
+        <text class="liftlist-item-right-select-txt ">选层</text>
+      </view>
+    </view>
+  </view>
+</view>

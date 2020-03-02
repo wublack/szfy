@@ -1,0 +1,68 @@
+<!--logs.wxml-->
+<view>
+  <!-- <navigationBar>
+    <text class="iconfont icon-Leftparentheses back-btn" slot="leftView"></text>
+    <view slot="middleView">
+      <text class="middle-title">中物互联</text>
+    </view>
+  </navigationBar>
+  <scroll-view style="height:{{windowHeight}}rpx;" scroll-y> -->
+    <view class="top-info">
+      <text class="iconfont icon-Family icon-style"></text>
+      <text class="base-ifno">基本信息</text>
+    </view>
+    <view class="base-info-address">
+      <view class="address-icon">
+        <text class="iconfont icon-H-Limitline"></text>
+      </view>
+      <view>
+        <text class="base-info-project-name">中物互联</text>
+        <view>
+          <text class="iconfont icon-H-Limitline position"></text>
+          <text class="base-info-project-address">天安数码城创新科技广场二期西座1905</text>
+        </view>
+      </view>
+    </view>
+    <view class="census-content">
+      <view class="census-content-info">
+        <view class="census-content-info-item">
+          <text class="census-content-info-title">10</text>
+          <text class="census-content-info-value">设备数</text>
+        </view>
+        <view class="census-content-info-item">
+          <text class="census-content-info-title">10</text>
+          <text class="census-content-info-value">登记数</text>
+        </view>
+        <view class="census-content-info-item">
+          <text class="census-content-info-title">10</text>
+          <text class="census-content-info-value">今日通行</text>
+        </view>
+        <view class="census-content-info-item">
+          <text class="census-content-info-title-warn">10</text>
+          <text class="census-content-info-value">体温告警</text>
+        </view>
+      </view>
+    </view>
+    <view class="census-content">
+      <view class="census-content-pie">
+        <f2 class="f2-chart" onInit="{{onInitChart}}" />
+      </view>
+    </view>
+    <view class="census-content">
+      <view class="census-content-tab">
+        <view class="{{selectIndex==1?'census-content-tab-item-select':'census-content-tab-item'}}" bindtap="changTab" data-index="1">
+          <text class="{{selectIndex==1?'census-content-tab-item-txt-select':'census-content-tab-item-txt'}}">实时告警</text>
+        </view>
+        <view class="{{selectIndex==2?'census-content-tab-item-select':'census-content-tab-item'}}"  bindtap="changTab" data-index="2">
+          <text class="{{selectIndex==2?'census-content-tab-item-txt-select':'census-content-tab-item-txt'}}">实时通行</text>
+        </view>
+        <view class="{{selectIndex==3?'census-content-tab-item-select':'census-content-tab-item'}}"  bindtap="changTab" data-index="3">
+          <text class="{{selectIndex==3?'census-content-tab-item-txt-select':'census-content-tab-item-txt'}}">通行统计</text>
+        </view>
+      </view>
+    </view>
+    <warnList>
+    </warnList>
+  <!-- </scroll-view> -->
+
+</view>

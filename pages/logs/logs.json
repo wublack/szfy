@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "查看启动日志",
+  "usingComponents": {
+    "navigationBar": "../../components/navigationBar/navigationBar",
+    "f2": "@antv/wx-f2",
+    "warnList":"../../components/warn/warnList"
+  }
+}

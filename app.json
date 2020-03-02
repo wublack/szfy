@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/regist/regist",
+    "pages/registed/registed",
+    "pages/record/record",
+    "pages/liftlist/liftlist",
+    "pages/selectfloor/selectfloor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "数字防疫",
+    "navigationBarTextStyle": "black"
+    
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人",
+        "iconPath": "images/persion.png",
+        "selectedIconPath": "images/persion_selected.png",
+        "selectedColor": "#31BA8B"
+      },
+     
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_selected.png",
+        "selectedColor": "#31BA8B"
+      }
+    ],
+    "selectedColor": "#666666",
+    "color": "#666666"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

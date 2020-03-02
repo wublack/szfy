@@ -1,0 +1,143 @@
+<!--pages/regist/regist.wxml-->
+<view>
+  <view class="base-title">
+    <view class="base-title-line"></view>
+    <text class="base-title-txt">基本信息</text>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="item-name-txt">人脸头像</text>
+    </view>
+    <view class="info-item-photo">
+      <view class="persion space"  wx:key="index" wx:for="{{images}}" wx:if="{{images.length>0}}">
+        <image class="photo-item" src="{{item}}"></image>
+        <text class="iconfont icon-Deletenumber del-icon" bindtap="delPhoto" data-index="{{index}}"></text>
+      </view>
+      <view class="kuang" bindtap="getPhoto" wx:if="{{images.length<4}}">
+        <text class="iconfont icon-plus-s plus-icon"></text>
+        <text class="take-photo">拍照</text>
+      </view>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">姓名</text>
+    </view>
+    <input placeholder="请输入您的姓名" bindinput="bindName" placeholder-class="tip-style"></input>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">性别</text>
+    </view>
+    <radio-group bindchange="sexCheckboxChange" class="sex-radio">
+      <label class="radio-male">
+        <radio value="0" checked />男
+      </label>
+      <label class="radio-women">
+        <radio value="1" />女
+      </label>
+    </radio-group>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">联系电话</text>
+    </view>
+    <input type="number" bindinput="inputPhone" placeholder="请输入您的联系电话" placeholder-class="tip-style"></input>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">身份证号</text>
+    </view>
+    <input placeholder="请输入您的身份证号" bindinput="inputId" placeholder-class="tip-style"></input>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">居住类型</text>
+    </view>
+    <radio-group bindchange="homeCheckboxChange" class="sex-radio">
+      <label class="radio-male">
+        <radio value="0" checked />常住居民
+      </label>
+      <label class="radio-women">
+        <radio value="1" />外来人员
+      </label>
+    </radio-group>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">居住区域</text>
+    </view>
+
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="name">
+      <view class="select-aera">
+        <text class="left-area">{{selectAddress}}</text>
+        <text class="right-area">选择</text>
+      </view>
+    </picker>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">详细地址(具体门牌号)</text>
+    </view>
+    <input placeholder="请输入详细地址" bindinput="inputDetail" placeholder-class="tip-style"></input>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">单位(学校)名称</text>
+    </view>
+    <input placeholder="请输入单位(学校)名称" bindinput="inputUnit"  placeholder-class="tip-style"></input>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">身体状况</text>
+    </view>
+    <radio-group bindchange="checkboxChange" class="sex-radio">
+      <label class="radio-male">
+        <radio value="身体健康" checked />身体健康
+      </label>
+      <label class="radio-women">
+        <radio value="有发热咳嗽等不适症状" />有发热咳嗽等不适症状
+      </label>
+    </radio-group>
+  </view>
+  <view class="info-item">
+    <view class="item-name">
+      <text class="xing">*</text>
+      <text class="item-name-txt">体温</text>
+    </view>
+    <radio-group bindchange="checkboxChange" class="sex-radio">
+      <label class="radio-male">
+        <radio value="37.3℃以下" checked />37.3℃以下
+      </label>
+      <label class="radio-women">
+        <radio value="37.3℃及以上" />37.3℃及以上
+      </label>
+    </radio-group>
+  </view>
+  <view class="tips-input">
+    <text class="promise-txt">带</text>
+    <text class="hong">*</text>
+    <text class="promise-txt">为必填项</text>
+  </view>
+  <view class="promise" bindtap="readTxt">
+    <radio value="" checked="{{isRead}}" />
+    <text class="promise-txt">本人承诺以上填写内容正确属实</text>
+  </view>
+  <view class="submit-content">
+    <view class="submit" bindtap="submitInfo">
+      <text class="submit-txt">提交</text>
+    </view>
+  </view>
+
+<!-- <canvas canvas-id="canvas" style="width:{{cWidth}}px;height:{{cHeight}}px;position: absolute;left:-1000px;top:-1000px;"></canvas> -->
+
+</view>

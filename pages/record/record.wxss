@@ -1,0 +1,77 @@
+/* pages/record/record.wxss */
+
+page{
+  background-color: #f5f5f5;
+}
+
+
+.record-item{
+  background-color: white;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.record-item-top{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 21rpx;
+  margin-right: 31rpx;
+}
+
+.record-item-top-left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.record-item-top-left-circle{
+ 
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 100%;
+}
+
+.record-item-top-left-circle-normal{
+   background-color: #1472f3;
+}
+
+.record-item-top-left-circle-refuse{
+   background-color: #F93939;
+}
+
+.record-item-top-left-time{
+  color: #333;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+.record-item-top-right{
+  color: #333;
+  font-size: 26rpx;
+}
+
+.record-item-bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 41rpx;
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+}
+
+.record-item-bottom-left{
+   color: #B7B8BD;
+  font-size: 26rpx;
+}
+
+.record-item-bottom-right{
+  color: #1472f3;
+  font-size: 24rpx;
+}
+
+.record-item-bottom-right-normal{
+  color: #1472f3;
+}
+
+.record-item-bottom-right-refuse{
+  color: #F93939;
+}
