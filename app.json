@@ -7,14 +7,14 @@
     "pages/registed/registed",
     "pages/record/record",
     "pages/liftlist/liftlist",
-    "pages/selectfloor/selectfloor"
+    "pages/selectfloor/selectfloor",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "数字防疫",
     "navigationBarTextStyle": "black"
-    
   },
   "tabBar": {
     "list": [
@@ -25,7 +25,6 @@
         "selectedIconPath": "images/persion_selected.png",
         "selectedColor": "#31BA8B"
       },
-     
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",

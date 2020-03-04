@@ -14,6 +14,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const BaseUrl = "https://fy.caszyj.com:9092/"
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  BaseUrl: BaseUrl
 }

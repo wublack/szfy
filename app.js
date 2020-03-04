@@ -21,12 +21,6 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log('login',res)
-        wx.getUserInfo({
-          success: function (userInfo) {
-            console.log('userInfo',userInfo
-            )
-          }
-        })
       }
     })
     // 获取用户信息
@@ -54,7 +48,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    userPhone:"",
+    iv:"",
+    encryptedData:""
   }
   //  {
   //       "pagePath": "pages/logs/logs",

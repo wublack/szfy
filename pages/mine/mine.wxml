@@ -1,2 +1,31 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view>
+  <view class="user-info">
+    <view class="user-info-left">
+      <view class="head-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user-info-name">
+        <open-data type="userNickName"></open-data>
+      </view>
+    </view>
+    <text class="iconfont icon-System icon-style"></text>
+  </view>
+  <view class="item-info" bindtap="gotoAbout">
+    <view class="item-info-left">
+      <view class="item-info-icon">
+        <text class="iconfont icon-About icon-about"></text>
+      </view>
+      <text class="about-us">关于我们</text>
+    </view>
+    <text class="iconfont icon-Rightparentheses icon-right"></text>
+  </view>
+  <view wx:if="{{!isLogin}}">
+    <button class="login-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">登录</button>
+  </view>
+  <view wx:else class="logout-content">
+    <view class="logout-content-middle" bindtap="logout">
+      <text class="logout-content-middle-txt">退出登录</text>
+    </view>
+  </view>
+</view>

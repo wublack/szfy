@@ -1,9 +1,9 @@
 /**index.wxss**/
 
-/* page{
+page{
   height: 100%;
-  overflow: hidden;
-} */
+  /* overflow: hidden; */
+}
 
 
 
@@ -115,6 +115,7 @@
   background-color: white;
   margin-top: 6rpx;
   margin-bottom: 10rpx;
+  margin-right: 8rpx;
 }
 
 .grid-cecle {

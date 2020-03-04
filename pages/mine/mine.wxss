@@ -1,1 +1,121 @@
 /* pages/mine/mine.wxss */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 180rpx;
+  background-color: white;
+  padding-left: 31rpx;
+  padding-right: 35rpx;
+  margin-top: 10rpx;
+}
+
+.user-info-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.icon-style{
+  font-size: 40rpx;
+}
+
+.user-info-name{
+  font-size: 36rpx;
+  color: #000;
+  font-weight: bold;
+  margin-left: 32rpx;
+}
+
+.item-info{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: 10rpx;
+  padding-left: 28rpx;
+  padding-right: 31rpx;
+}
+
+.item-info-left{
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-info-icon{
+  background-color: #116FEA;
+  height: 48rpx;
+  width: 48rpx;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us{
+  margin-left: 14rpx;
+  color: #000;
+  font-size: 30rpx;
+}
+
+
+.icon-about{
+  color: white;
+  font-size: 30rpx;
+}
+
+.icon-right{
+  font-size: 31rpx;
+}
+
+.logout-content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80rpx;
+}
+
+.logout-content-middle{
+  background-color: #116FEA;
+  width: 93%;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 6rpx;
+}
+
+.logout-content-middle-txt{
+  font-size: 36rpx;
+  color: white;
+}
+
+button{
+
+}
+
+.login-btn{
+  margin-top: 80rpx;
+  width: 100%;
+  background-color: #116FEA;
+  color: white;
+}
+

@@ -1,0 +1,11 @@
+<!--pages/about/about.wxml-->
+<view>
+  <view class="top">
+    <image src="../../images/fy_icon.png" class="icon"></image>
+  </view>
+  <view class="bottom">
+    <view class="line"></view>
+    <text class="version">V1.0.0</text>
+    <view class="line"></view>
+  </view>
+</view>

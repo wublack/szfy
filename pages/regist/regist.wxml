@@ -13,7 +13,7 @@
         <image class="photo-item" src="{{item}}"></image>
         <text class="iconfont icon-Deletenumber del-icon" bindtap="delPhoto" data-index="{{index}}"></text>
       </view>
-      <view class="kuang" bindtap="getPhoto" wx:if="{{images.length<4}}">
+      <view class="kuang" bindtap="getPhoto" wx:if="{{images.length<1}}">
         <text class="iconfont icon-plus-s plus-icon"></text>
         <text class="take-photo">拍照</text>
       </view>
@@ -24,7 +24,7 @@
       <text class="xing">*</text>
       <text class="item-name-txt">姓名</text>
     </view>
-    <input placeholder="请输入您的姓名" bindinput="bindName" placeholder-class="tip-style"></input>
+    <input placeholder="请输入您的姓名" bindinput="bindName" placeholder-class="tip-style" value="{{name}}"></input>
   </view>
   <view class="info-item">
     <view class="item-name">
@@ -33,10 +33,10 @@
     </view>
     <radio-group bindchange="sexCheckboxChange" class="sex-radio">
       <label class="radio-male">
-        <radio value="0" checked />男
+        <radio value="0" checked="{{sex==0}}" />男
       </label>
       <label class="radio-women">
-        <radio value="1" />女
+        <radio value="1" checked="{{sex==1}}" />女
       </label>
     </radio-group>
   </view>
@@ -45,14 +45,14 @@
       <text class="xing">*</text>
       <text class="item-name-txt">联系电话</text>
     </view>
-    <input type="number" bindinput="inputPhone" placeholder="请输入您的联系电话" placeholder-class="tip-style"></input>
+    <input type="number" disabled bindinput="inputPhone" placeholder="请输入您的联系电话" placeholder-class="tip-style" value="{{phone}}"></input>
   </view>
   <view class="info-item">
     <view class="item-name">
       <text class="xing">*</text>
       <text class="item-name-txt">身份证号</text>
     </view>
-    <input placeholder="请输入您的身份证号" bindinput="inputId" placeholder-class="tip-style"></input>
+    <input placeholder="请输入您的身份证号" bindinput="inputId" placeholder-class="tip-style" value="{{identy}}"></input>
   </view>
   <view class="info-item">
     <view class="item-name">
@@ -86,14 +86,14 @@
       <text class="xing">*</text>
       <text class="item-name-txt">详细地址(具体门牌号)</text>
     </view>
-    <input placeholder="请输入详细地址" bindinput="inputDetail" placeholder-class="tip-style"></input>
+    <input placeholder="请输入详细地址" bindinput="inputDetail" placeholder-class="tip-style" value="{{detailInfo}}"></input>
   </view>
   <view class="info-item">
     <view class="item-name">
       <text class="xing">*</text>
       <text class="item-name-txt">单位(学校)名称</text>
     </view>
-    <input placeholder="请输入单位(学校)名称" bindinput="inputUnit"  placeholder-class="tip-style"></input>
+    <input placeholder="请输入单位(学校)名称" bindinput="inputUnit"  placeholder-class="tip-style" value="{{unit}}"></input>
   </view>
   <view class="info-item">
     <view class="item-name">

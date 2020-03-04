@@ -5,35 +5,35 @@
       <view class="base-title-line"></view>
       <text class="base-title-txt">基本信息</text>
     </view>
-    <text class="update">修改</text>
+    <text class="update" bindtap="update">修改</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">姓名</text>
-    <text class="item-info-value">刘亦菲</text>
+    <text class="item-info-value">{{userInfo.FContacts}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">性别</text>
-    <text class="item-info-value">女</text>
+    <text class="item-info-value">{{userInfo.FGender==0?'男':'女'}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">联系电话</text>
-    <text class="item-info-value">13620160637</text>
+    <text class="item-info-value">{{userInfo.FUserName}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">身份证号</text>
-    <text class="item-info-value">43656523125642</text>
+    <text class="item-info-value">{{userInfo.FCard}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">居民类型</text>
-    <text class="item-info-value">常住居民</text>
+    <text class="item-info-value">{{userInfo.FLiveType}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">居住区域详细地址</text>
-    <text class="item-info-value">广东省福田区天安数码城</text>
+    <text class="item-info-value">{{userInfo.FAddressDetail}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">单位(学校)名称</text>
-    <text class="item-info-value">深圳市中物互联发展有限公司</text>
+    <text class="item-info-value">{{userInfo.FDescribe}}</text>
   </view>
   <view class="item-info">
     <text class="item-info-title">身体状况</text>
@@ -41,10 +41,10 @@
   </view>
   <view class="item-info">
     <text class="item-info-title">体温</text>
-    <text class="item-info-value">37.3℃以下</text>
+    <text class="item-info-value">{{userInfo.FTemperature}}</text>
   </view>
   <view class="item-header">
     <text class="item-info-title">人脸头像</text>
-    <image style="width:120rpx;height:80rpx;" src="http://img4.imgtn.bdimg.com/it/u=1018404792,1959474490&fm=11&gp=0.jpg"></image>
+    <image style="width:100rpx;height:100rpx;" src="data:image/png;base64,{{userInfo.FIMG}}"></image>
   </view>
 </view>

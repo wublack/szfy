@@ -14,8 +14,7 @@
         </block>
       </swiper>
     </view>
-    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
-    <view class="item-info" open-type="getUserInfo" bindgetuserinfo="getUserInfo"  bindtap="registerTap" >
+    <view class="item-info" bindtap="registerTap" >
       <view class="vertical-content">
         <view class="left-icon">
           <text class="iconfont icon-H-Register regist-icon"></text>

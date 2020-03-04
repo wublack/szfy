@@ -57,8 +57,15 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/regist/regist",
-					"pathName": "pages/regist/regist",
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=ProjectID%3D23184",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				}

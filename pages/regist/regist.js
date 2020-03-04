@@ -1,5 +1,6 @@
 // pages/regist/regist.js
 const app = getApp()
+const util = require('../../utils/util.js')
 // 引入SDK核心类
 var QQMapWX = require('../../sdk/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
@@ -29,27 +30,26 @@ Page({
     city:"",
     area:"",
     avatarUrl:"",
-    nickName:""
+    nickName:"",
+    userInfo:null
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.getUserInfo({
-      success: function (res) {
-        console.log("userInfo",res);
-        var avatarUrl = '';
-        var nickName = '';
-        that.setData({
-          avatarUrl: res.userInfo.avatarUrl,
-          nickName: res.userInfo.nickName,
-        })
-      },
-      fail:function(res){
-        console.log("userInfo", "fail"+res);
-      }
+    let phone = wx.getStorageSync("phone")
+    this.setData({
+      phone:phone
     })
+    if (phone) {
+      let data = {
+        FUserName: phone,
+        FAction: "APP",
+        FVersion: "1.0.0"
+      }
+      this.loginByPhone(data)
+    }
     // 实例化API核心类
     qqmapsdk = new QQMapWX({
       key: 'Q3OBZ-SZXCP-M4ED7-VU7QZ-WKUZF-PXF2G'
@@ -150,7 +150,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'http://www.szqianren.com/H5/citys.json',
+      url: 'https://www.szqianren.com/H5/citys.json',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -174,36 +174,109 @@ Page({
       }
     })
   },
+  checkInfo:function(){
+    var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+    if (!this.data.name){
+      wx.showToast({
+        title: '请输入您的姓名',
+        icon:'none'
+      })
+      return false
+    } else if (!this.data.identy){
+      wx.showToast({
+        title: '请输入您的身份证号',
+        icon: 'none'
+      })
+      return false
+    } else if (reg.test(this.data.identy) === false){
+      wx.showToast({
+        title: '您输入的身份证号不合法',
+        icon: 'none'
+      })
+      return false
+    } else if (!this.data.selectAddress){
+      wx.showToast({
+        title: '请选择居住区域',
+        icon: 'none'
+      })
+      return false
+    } else if (!this.data.detailInfo){
+      wx.showToast({
+        title: '请输入详细地址',
+        icon: 'none'
+      })
+      return false
+    } else if (!this.data.unit) {
+      wx.showToast({
+        title: '请输入单位或者学校名称',
+        icon: 'none'
+      })
+      return false
+    } else if (!this.data.isRead) {
+      wx.showToast({
+        title: '请勾选填写内容是否正确属实',
+        icon: 'none'
+      })
+      return false
+    }else{
+      return true
+    }
+  },
   submitInfo: function() {
+    if(!this.checkInfo())return
+    let userInfo  = app.globalData.userInfo
+    let that = this
     let data = {
-      FTokenID: "",
-      FAction: "QueryUserProject",
+      FTokenID: userInfo.FTokenID,
+      FAction: "AddOrUpdateUser",
       FVersion: "1.0.0",
       TUsers: {
-        FGUID: "",
+        FGUID: userInfo.FUserGUID,
         FUserName: this.data.phone,
-        FUserNickname: this.data.nickName,
-        FUserType: 0,
+        FUserNickname: this.data.name,
         FContacts: this.data.name,
         FTelephone: this.data.phone,
-        FIMG: "",
+        FIMGPath: this.data.avatarUrl,
         FAddressDetail:this.data.detailInfo,
-        ProjectIDs: "1",
+        ProjectIDs: app.globalData.projectId,
         FGender: this.data.sex,
         FCard: this.data.identy,
         FLiveType: this.data.userType,
         FCity: this.data.city,
-        FArea: this.data.area
+        FArea: this.data.area,
+        FTemperature:this.data.tem,
+        FDescribe:this.data.unit
       }
     }
+    console.log('submit',JSON.stringify(data))
     wx.request({
-      url: 'http://47.107.224.8:9092/Project/QueryUserProject',
+      url: util.BaseUrl +'Users/AddOrUpdateUser',
       data: data,
       method:"POST",
       success(res){
         console.log('success',res)
-      },fail(){
-
+        if(res&&res.data&&res.data.Result===200){
+          let userInfo = app.globalData.userInfo
+          userInfo.FCard = that.data.identy
+          app.globalData.userInfo = userInfo
+          wx.showToast({
+            title: '提交成功',
+            icon:'success'
+          })
+          wx.redirectTo({
+            url: '../registed/registed',
+          })
+        }else{
+          wx.showToast({
+            title: '提交失败',
+            icon: 'none'
+          })
+        }
+      },fail(fail){
+        wx.showToast({
+          title: '提交失败',
+          icon: 'none'
+        })
       }
     })
   },
@@ -415,7 +488,7 @@ Page({
       name: "image.jpg"
     }
     wx.uploadFile({
-      url: 'http://47.107.224.8:9092/UploadFile',
+      url: util.BaseUrl+'UploadFile',
       filePath: filePath,
       name: "file",
       formData: {
@@ -430,6 +503,7 @@ Page({
       },
       success(res) {
         console.log('success', res)
+        wx.hideLoading()
         if (res && res.data) {
           let resData = JSON.parse(res.data)
           if (resData.Result === 200) {
@@ -438,9 +512,13 @@ Page({
               icon: 'success'
             })
             let imgAddress = that.data.imgAddress
-            imgAddress.push(res.data.FObject)
+
+            let url = resData.FObject
+            console.log('url',url)
+            imgAddress.push(url)
             that.setData({
-              imgAddress: imgAddress
+              imgAddress: imgAddress,
+              avatarUrl: url
             })
           } else {
             let images = that.data.images
@@ -450,7 +528,7 @@ Page({
             })
             wx.showToast({
               title: '上传失败',
-              icon: 'fail'
+              icon: 'none'
             })
 
           }
@@ -463,12 +541,13 @@ Page({
           })
           wx.showToast({
             title: '上传失败',
-            icon: 'fail'
+            icon: 'none'
           })
         }
       },
       fail(err) {
         let images = that.data.images
+        wx.hideLoading()
         images.pop()
         that.setData({
           images: images
@@ -476,7 +555,7 @@ Page({
         console.log('fail')
         wx.showToast({
           title: '上传失败',
-          icon: 'fail'
+          icon: 'none'
         })
       }
     })
@@ -506,6 +585,43 @@ Page({
     this.setData({
       phone: e.detail.value
     })
-  }
+  },
+  loginByPhone(data) {
+    console.log('login-data', data)
+    let that = this
+    wx.request({
+      url: util.BaseUrl + 'checkloginPhone',
+      data: data,
+      method: "POST",
+      success(res) {
+        console.log('suc', res)
+        if (res && res.data && res.data.Result == 200) {
+          let userInfo = res.data.FObject
+          app.globalData.userInfo = userInfo
+          let images = that.data.images
+          images.push(util.BaseUrl+ userInfo.FIMGPath)
+          that.setData({
+            userInfo: userInfo,
+            phone: userInfo.FUserName,
+            name:userInfo.FContacts,
+            avatarUrl: userInfo.FIMGPath,
+            detailInfo: userInfo.FAddressDetail,
+            projectId: userInfo.ProjectIDs,
+            sex: userInfo.FGender,
+            identy: userInfo.FCard,
+            userType: userInfo.FLiveType,
+            city: userInfo.FCity ,
+            area: userInfo.FArea,
+            tem: userInfo.FTemperature,
+            unit: userInfo.FDescribe,
+            images: images
+          })
+        }
+      },
+      fail(err) {
+        console.log('suc', err)
+      }
+    })
+  },
 
 })
